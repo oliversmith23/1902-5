@@ -1,25 +1,40 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-<meta charset="UTF-8">
-<title>CodePen - 1902-5</title>
-<style>
-    span{
-  color:#FF00FF;
+<div>
+<button id="playMe">Play Me</button>
+<button id="playHalf">Play Half Speed</button>
+  <button id="playMiddle">Play From Middle</button>
+</div>
+<video width="320" height="240" id="myVid" controls>
+  <source src="https://github.com/oliversmith23/1902-5/raw/master/video/WIN_20190903_13_33_27_Pro.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
+
+<div>Hello<span>World</span></div>
+console.clear();
+
+document.getElementById("playMe").addEventListener("click",doPlayMe);
+document.getElementById("playHalf").addEventListener("click",doHalfSpeed);
+
+var myVid = document.getElementById("myVid");
+
+function doPlayMe(e){
+  console.log("Play Me Pressed");
+  myVid.play();
+}
+
+function doHalfSpeed(e){
+  console.log("Play Half Spped");
+  myVid.playbackRate = .5;
+  myVid.play();
+}
+function doPlayMiddel(e){
+  myVid.currentTime = 5;
+  myVid.play();
+}
+div{
+  color:hotpink;
 }
 
 div{
-  background:#CCCCCC; 
+  background:rgb(255,255,255); 
   font-size:75px;
 }
-  </style>
-</head>
-<body translate="no">
-<div>Hello<span>World!</span></div>
-<script id="rendered-js">
-      console.clear()
-var x = 5;
-console.log("hello world",x);
-    </script>
-</body>
-</html>
